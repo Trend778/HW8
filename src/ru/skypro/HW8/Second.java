@@ -1,7 +1,5 @@
 package ru.skypro.HW8;
 
-import javafx.application.Application;
-
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -37,7 +35,7 @@ public class Second {
     private static void task2(Scanner sc) {
         System.out.print("Choose the OS of your device.\nPress 0 for iOS or 1 for Android: "); //Ввод типа операционной системы
         byte clientOS = sc.nextByte();
-        if (clientOS<0||clientOS>1) {
+        if (clientOS < 0 || clientOS > 1) {
             throw new RuntimeException("Выберите 0 или 1");
         }
         System.out.print("Enter the manufacture year of your device: "); //Ввод года изготовления устройства
