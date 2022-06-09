@@ -4,23 +4,25 @@ import java.lang.Math;
 
 public class Third {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        task3(sc);
-    }
-
-    static void checkDelivery (int deliveryDistance) {
-        int days;
-        if (deliveryDistance <= 20) {
-            System.out.println("Потребуется дней: " + 1);
-        } else {
-            days = (int)Math.ceil (deliveryDistance /40 + 1) ;
-            System.out.println("Потребуется дней: " + days);
+        try (Scanner sc = new Scanner(System.in)) {
+            task3(sc);
         }
     }
-    public static void task3 (Scanner sc) {
+
+    private static int checkDeliveryDays (int deliveryDistance) {
+        int days;
+        if (deliveryDistance <= 20) {
+            days=1;
+            return days;
+        } else {
+            days = (int)Math.ceil (deliveryDistance /40 + 1) ;
+        }
+        return days;
+    }
+    private static void task3 (Scanner sc) {
         System.out.print("Введите расстояние от офиса до клиента: ");
         int deliveryDistance = sc.nextInt(); //Дистанция до офиса
-        checkDelivery(deliveryDistance);
+        System.out.println("Потребуется дней: " + checkDeliveryDays(deliveryDistance)); //Кол-во дней на доставку
         Main.printSeparator();
     }
 }
