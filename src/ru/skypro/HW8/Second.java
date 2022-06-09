@@ -40,7 +40,6 @@ public class Second {
         }
         System.out.print("Enter the manufacture year of your device: "); //Ввод года изготовления устройства
         short clientDeviceYear = sc.nextShort();
-        Scanner close;
         Main.printSeparator();
         checkClientOs(clientOS, clientDeviceYear);
         Main.printSeparator();
